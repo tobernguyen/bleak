@@ -3,7 +3,11 @@
 <header id="header" class="header{{#if @blog.cover}} has-cover{{/if}}">
 	<div class="inner">
 		<a class="header-title" href="{{@blog.url}}">
-			<h1 class="header-name">{{@blog.title}}</h1>
+			{{#if @blog.logo}}
+			<img src="{{@blog.logo}}" alt="Logo" />
+			{{else}}
+			<span class="name">{{@blog.title}}</span>
+			{{/if}}
 			{{#if @blog.description}}
 				<span class="header-description">{{@blog.description}}</span>
 			{{/if}}
